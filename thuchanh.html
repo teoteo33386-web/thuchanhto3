@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <title>Tổ 3</title>
+
+</head>
+<body>
+<center>
+    <h2 style="color:green;">🌱 CHỦ ĐỀ BÁO TƯỜNG 26/3 ♥️</h2>
+    <b>“Báo Tường Tổ 3”</b>
+</center>
+  <!-- ================= NÚT GÓC PHẢI ================= -->
+    <style>
+body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#f1f1f1;
+    line-height:1.7;
+}
+body{
+    font-family: Arial;
+    background: #0d0d0d;   /* nền đen */
+    color: #e0e0e0;        /* chữ sáng */
+}
+
+/* TIÊU ĐỀ */
+h1{
+    text-align:center;
+    color:#7CFF6B;
+    font-size:36px;
+    text-shadow:0 0 10px rgba(124,255,107,0.7);
+}
+
+h2{
+    text-align:center;
+    color:#ffd166;
+    margin-top:5px;
+}
+
+h3{
+    color:#ff9f43;
+    margin-top:30px;
+}
+
+/* NỘI DUNG */
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:rgba(0,0,0,0.45);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+p{
+    font-size:17px;
+    text-align:justify;
+    color:#eaeaea;
+}
+
+/* CÂU KẾT */
+.footer-text{
+    text-align:center;
+    margin-top:30px;
+    font-weight:bold;
+    color:#7CFF6B;
+}
+
+/* GÓC PHẢI: ĐĂNG NHẬP */
+.top-right{
+    position:fixed;
+    top:15px;
+    right:20px;
+    z-index:1000;
+}
+
+.top-right a{
+    text-decoration:none;
+    margin-left:8px;
+    padding:7px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.btn-login{
+    background:#3498db;
+    color:white;
+}
+
+.btn-register{
+    background:#e67e22;
+    color:white;
+}
+
+.btn-logout{
+    background:#e74c3c;
+    color:white;
+}
+</style>
+
+<!-- NÚT ĐĂNG NHẬP / ĐĂNG KÝ -->
+<div id="nutDangNhap" class="top-right">
+    <a href="dangnhap.html" class="btn btn-login">Đăng nhập</a>
+    <a href="dangky.html" class="btn btn-register">Đăng ký</a>
+</div>
+
+<!-- XIN CHÀO -->
+<div id="xinChao" class="top-right hello" style="display:none;">
+     <b id="tenUser"></b> |
+    <a href="#" onclick="dangXuat()">Đăng xuất</a>
+</div>
+
+<script>
+if(localStorage.getItem("login") === "yes"){
+    document.getElementById("nutDangNhap").style.display = "none";
+    document.getElementById("xinChao").style.display = "block";
+    document.getElementById("tenUser").innerText =
+        localStorage.getItem("tk");
+}
+
+function dangXuat(){
+    localStorage.removeItem("login");
+    location.reload();
+}
+</script>
+<!-- ================= END ================= -->
+
+  <div class="container">  
+<br>
+
+<b>Lời Ngỏ</b>
+<p>
+Ngày 26/3 hằng năm là ngày hội lớn của tuổi trẻ Việt Nam – ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh. Đây không chỉ là dịp để mỗi đoàn viên, thanh niên nhìn lại chặng đường rèn luyện của bản thân mà còn là lúc để thắp sáng niềm tin, khát vọng và tinh thần cống hiến của tuổi trẻ hôm nay.
+</p>
+<b>Tuổi trẻ 12E – Nhiệt huyết và ước mơ</b>
+<p>Tuổi trẻ là quãng thời gian đẹp nhất của đời người – nơi có những ước mơ trong veo, những hoài bão lớn lao và những kỷ niệm không thể nào quên. Với tập thể lớp 12E, tuổi trẻ là những ngày đến lớp cùng tiếng cười rộn rã, là những buổi học căng thẳng nhưng đầy quyết tâm, là sự đoàn kết, sẻ chia trong từng hoạt động của lớp và của Đoàn trường, nghị lực và quyết tâm để bước tiếp trên con đường phía trước.
+Dù khó khăn thử thách, hãy luôn cố gắng để biến ước mơ thành hiện thực.
+</p>
+<b>26/3 – Ngày của trách nhiệm và trưởng thành</b>
+<p>Ngày 26/3 không chỉ là ngày kỷ niệm mà còn là lời nhắc nhở mỗi đoàn viên hãy sống có lý tưởng, có trách nhiệm với bản thân, gia đình và xã hội. Là học sinh lớp 12 – thế hệ sắp rời xa mái trường, chúng em càng ý thức rõ hơn về vai trò của mình: không ngừng học tập, rèn luyện đạo đức, nuôi dưỡng ước mơ và sẵn sàng bước vào chặng đường mới của cuộc đời.</p>
+<p>Hòa chung không khí sôi nổi của ngày 26/3, tập thể lớp 12E xin gửi lời tri ân đến thầy cô – những người đã luôn dìu dắt, truyền cảm hứng và tiếp thêm động lực cho chúng em trên hành trình trưởng thành. Chúng em nguyện sẽ sống xứng đáng với màu áo Đoàn, với tuổi trẻ đầy khát vọng và trách nhiệm.</p>
+
+<div class="footer-text">
+✨ Tuổi trẻ 12E – Tự hào truyền thống Đoàn – Vững bước tương lai! ✨
+</div>
+
+</div>
+
+<center>
+    <b>Góc Ảnh</b>
+</center>
+
+<br>
+
+<table align="center" cellpadding="10">
+    <tr>
+        <td>
+            <img src="9f871ed2-2c23-45bc-8733-85fdb0fc9152.jfif" width="200"><br>
+            Kỉ niệm học trò
+        </td>
+        <td>
+            <img src="3ac6e8e9-f679-48ad-aa6f-fca9131afea4.mp4" width="200"><br>
+            Ngày chia tay
+        </td>
+    </tr>
+</table>
+
+<title>Video giới thiệu</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+}
+
+.video-box{
+    max-width:720px;
+    margin:30px auto;
+    background:#fff;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+video{
+    width:100%;
+    border-radius:12px;
+}
+
+/* Rating */
+.stars{
+    margin:15px 0;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.stars span{
+    color:#ccc;
+}
+
+.stars span.active{
+    color:gold;
+}
+
+/* Comment */
+textarea{
+    width:100%;
+    height:80px;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    background:#28a745;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.comment{
+    margin-top:15px;
+    background:#f1f1f1;
+    padding:10px;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="video-box">
+
+    <!-- VIDEO -->
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ video
+    </video>
+
+    <!-- ĐÁNH GIÁ -->
+    <div class="stars" id="stars">
+        <span data-star="1">★</span>
+        <span data-star="2">★</span>
+        <span data-star="3">★</span>
+        <span data-star="4">★</span>
+        <span data-star="5">★</span>
+    </div>
+    <div id="ratingText"></div>
+
+    <!-- BÌNH LUẬN -->
+    <textarea id="comment" placeholder="Nhập bình luận của bạn..."></textarea>
+    <button onclick="saveComment()">Gửi bình luận</button>
+
+    <div id="commentList"></div>
+
+</div>
+
+<script>
+let stars = document.querySelectorAll('.stars span');
+let ratingText = document.getElementById('ratingText');
+let currentRating = localStorage.getItem('rating') || 0;
+
+function updateStars(rating){
+    stars.forEach(s=>{
+        s.classList.toggle('active', s.dataset.star <= rating);
+    });
+    ratingText.innerText = rating > 0 ? `Bạn đã đánh giá ${rating} sao ⭐` : '';
+}
+
+updateStars(currentRating);
+
+stars.forEach(star=>{
+    star.onclick = () =>{
+        currentRating = star.dataset.star;
+        localStorage.setItem('rating', currentRating);
+        updateStars(currentRating);
+    }
+});
+
+function saveComment(){
+    let text = document.getElementById('comment').value;
+    if(text.trim() === '') return;
+
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    comments.push(text);
+    localStorage.setItem('comments', JSON.stringify(comments));
+    document.getElementById('comment').value = '';
+    loadComments();
+}
+
+function loadComments(){
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    let html = '';
+    comments.forEach(c=>{
+        html += `<div class="comment">💬 ${c}</div>`;
+    });
+    document.getElementById('commentList').innerHTML = html;
+}
+loadComments();
+</script>
+
+</body>
+        
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
