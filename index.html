@@ -63,6 +63,35 @@ p{
   font-style: italic;
   line-height: 1.8;
 }
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item{
+  text-align: center;
+}
+
+.item img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s;
+}
+
+.item img:hover{
+  transform: scale(1.05);
+}
+
+.item p{
+  margin-top: 8px;
+  font-weight: 500;
+}
 
 
 /* CÂU KẾT */
@@ -175,40 +204,40 @@ là niềm tự hào, mà còn là trách nhiệm của tuổi trẻ hôm nay.
 
 </div>
 
-<center>
-    <b>Góc Ảnh nho nhỏ</b>
-</center>
+    <h2 style="text-align:center;">Góc Ảnh nho nhỏ</h2>
 
-<br>
+<div class="gallery">
+  <div class="item">
+    <img src="9f871ed2-2c23-45bc-8733-85fdb0fc9152.jfif">
+    <p>Kỉ niệm học trò</p>
+  </div>
 
-<table align="center" cellpadding="10">
-    <tr>
-        <td>
-            <img src="9f871ed2-2c23-45bc-8733-85fdb0fc9152.jfif" width="400"><br>
-            Kỉ niệm học trò
-        </td>
-        <td>
-            <img src="933f8052-b44f-4d97-a29d-5fd636efa94b.jfif" width="400"><br>
-            Ngày 20/11
-        </td>
-        <td>
-            <img src="81167627-a2bb-40de-b075-b8c13efd93c5.jfif" width="300"><br>
-            Ủng hộ quyên góp
-        </td>
-        <td>
-            <img src="9a3a18df-9138-44da-af7c-98bfb9680c47.jfif" width="300"><br>
-            Ảnh đoàn viên
-        </td>
-        <td>
-            <img src="de1ba1bb-73b8-4e95-9f02-6c5efc0f9aec.jfif" width="200"><br>
-            Ảnh đoàn viên
-        </td>
-        <td>
-            <img src="243e1c05-8fdb-4564-86e4-e0e594c61130.jfif" width="200"><br>
-            Nhóm Múa 20/11
-        </td>
-    </tr>
-</table>
+  <div class="item">
+    <img src="933f8052-b44f-4d97-a29d-5fd636efa94b.jfif">
+    <p>Ngày 20/11</p>
+  </div>
+
+  <div class="item">
+    <img src="81167627-a2bb-40de-b075-b8c13efd93c5.jfif">
+    <p>Ủng hộ quyên góp</p>
+  </div>
+
+  <div class="item">
+    <img src="9a3a18df-9138-44da-af7c-98bfb9680c47.jfif">
+    <p>Ảnh đoàn viên</p>
+  </div>
+
+  <div class="item">
+    <img src="de1ba1bb-73b8-4e95-9f02-6c5efc0f9aec.jfif">
+    <p>Ảnh đoàn viên</p>
+  </div>
+
+  <div class="item">
+    <img src="243e1c05-8fdb-4564-86e4-e0e594c61130.jfif">
+    <p>Nhóm Múa 20/11</p>
+  </div>
+</div>
+
 
 <style>
 body{
@@ -343,6 +372,7 @@ hienBinhLuan();
 </body>
         
     </html>
+
 
 
 
