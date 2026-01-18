@@ -249,54 +249,60 @@ button{
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const supabaseUrl = "https://jszkpzhtwtlmiwqjjgtd.supabase.co";
 const supabaseKey = "sb_publishable_TY4xxBZTnD7E0l5AODJYng_34uTl6kw";
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-/* ===== RATING ===== */
-async function rate(star){
-  await supabase.from("ratings").insert([{ star }]);
-  loadRating();
-}
+const list = document.getElementById("list");
+const comment = document.getElementById("comment");
 
-async function loadRating(){
-  const { data } = await supabase.from("ratings").select("star");
-  if(!data || data.length===0){
-    ratingText.innerText="Chưa có đánh giá";
+/* LOAD BÌNH LUẬN */
+async function loadComments(){
+  const { data, error } = await supabase
+    .from("comments")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if(error){
+    console.log(error);
     return;
   }
-  let sum=data.reduce((a,b)=>a+b.star,0);
-  ratingText.innerText=
-    `⭐ Trung bình ${(sum/data.length).toFixed(1)}/5 (${data.length} lượt)`;
-}
-loadRating();
 
-/* ===== COMMENTS ===== */
+  list.innerHTML = "";
+  data.forEach(c=>{
+    list.innerHTML += `
+      <div class="comment">💬 ${c.content}</div>
+    `;
+  });
+}
+
+/* GỬI BÌNH LUẬN */
 async function send(){
   if(!comment.value.trim()) return;
-  await supabase.from("comments").insert([{ content: comment.value }]);
+
+  const { error } = await supabase
+    .from("comments")
+    .insert([{ content: comment.value }]);
+
+  if(error){
+    alert(error.message);
+    return;
+  }
+
   comment.value="";
   loadComments();
 }
 
-async function loadComments(){
-  const { data } = await supabase
-    .from("comments")
-    .select("*")
-    .order("created_at",{ascending:false});
-
-  list.innerHTML="";
-  data.forEach(c=>{
-    list.innerHTML+=`<div class="comment">💬 ${c.content}</div>`;
-  });
-}
+/* LOAD KHI MỞ WEB */
 loadComments();
 </script>
 
 </body>
         
     </html>
+
 
 
 
