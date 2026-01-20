@@ -95,18 +95,33 @@
 
 .answer{
   display:block;
-  background:#ffffff;
+  background:#fff;
   padding:10px 12px;
   border-radius:10px;
   margin-bottom:10px;
   cursor:pointer;
   border:1px solid #cce5d9;
-  transition:0.2s;
 }
 
 .answer:hover{
   background:#c8ebdd;
 }
+
+button{
+  margin-top:10px;
+  padding:8px 18px;
+  background:#2e7d32;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+#result{
+  margin-top:12px;
+  font-weight:bold;
+}
+
         
 .gallery{
   display:grid;
@@ -303,31 +318,36 @@
 <div class="quiz-box">
   <b>CÂU HỎI ĐỐ VUI – TÌM HIỂU VỀ ĐOÀN TNCS HỒ CHÍ MINH</b>
   <br><br>
+
   <p><b>1. Màu áo truyền thống của Đoàn là màu gì?</b></p>
 
-  <form>
+  <form id="quizForm">
     <label class="answer">
-      <input type="radio" name="q1"> A. Màu đỏ
+      <input type="radio" name="q1" value="A"> A. Màu đỏ
     </label>
 
     <label class="answer">
-      <input type="radio" name="q1"> B. Màu xanh dương
+      <input type="radio" name="q1" value="B"> B. Màu xanh dương
     </label>
 
     <label class="answer">
-      <input type="radio" name="q1"> C. Màu xanh lá cây
+      <input type="radio" name="q1" value="C"> C. Màu xanh lá cây
     </label>
 
     <label class="answer">
-      <input type="radio" name="q1"> D. Màu vàng
+      <input type="radio" name="q1" value="D"> D. Màu vàng
     </label>
   </form>
-  👉 <i>Vui lòng chọn đáp án đúng!</i>
+
+  <button onclick="checkAnswer()">Kiểm tra đáp án</button>
+
+  <p id="result"></p>
+</div>
 
 <div class="footer-text">
 ✨ Tuổi trẻ 12E – Tự hào truyền thống Đoàn – Vững bước tương lai! ✨
 </div>
-
+</div>
 <h2 class="title">Góc Ảnh nho nhỏ</h2>
 <div class="gallery">
   <div>
@@ -479,6 +499,35 @@ function rate(stars) {
   text.innerText = "Bạn đã đánh giá " + stars + " sao ⭐";
 }
 </script>
+<script>
+function checkAnswer(){
+  const answers = document.querySelectorAll('input[name="q1"]');
+  let selected = "";
+
+  answers.forEach(a => {
+    if(a.checked){
+      selected = a.value;
+    }
+  });
+
+  const result = document.getElementById("result");
+
+  if(selected === ""){
+    result.innerHTML = "⚠️ Vui lòng chọn một đáp án!";
+    result.style.color = "#ff9800";
+    return;
+  }
+
+  // Đáp án đúng: C (xanh lá)
+  if(selected === "C"){
+    result.innerHTML = "🎉 Chính xác! Áo Đoàn có màu xanh lá cây.";
+    result.style.color = "#2e7d32";
+  }else{
+    result.innerHTML = "❌ Chưa đúng. Hãy thử lại nhé!";
+    result.style.color = "#d32f2f";
+  }
+}
+</script>
 
 <div class="footer">
     <div class="footer-container">
@@ -494,6 +543,7 @@ function rate(stars) {
 </div>
 </body>
    </html>
+
 
 
 
