@@ -136,32 +136,6 @@ p{
     color:white;
 }
 </style>
-
-<!-- NÚT ĐĂNG NHẬP / ĐĂNG KÝ -->
-<div id="nutDangNhap" class="top-right">
-    <a href="dangnhap.html" class="btn btn-login">Đăng nhập</a>
-    <a href="dangky.html" class="btn btn-register">Đăng ký</a>
-</div>
-
-<!-- XIN CHÀO -->
-<div id="xinChao" class="top-right hello" style="display:none;">
-     <b id="tenUser"></b> |
-    <a href="#" onclick="dangXuat()">Đăng xuất</a>
-</div>
-
-<script>
-if(localStorage.getItem("login") === "yes"){
-    document.getElementById("nutDangNhap").style.display = "none";
-    document.getElementById("xinChao").style.display = "block";
-    document.getElementById("tenUser").innerText =
-        localStorage.getItem("tk");
-}
-
-function dangXuat(){
-    localStorage.removeItem("login");
-    location.reload();
-}
-</script>
 <!-- ================= BÀI VIẾT ================= -->
 
   <div class="container">  
@@ -311,64 +285,6 @@ button{
     Trình duyệt không hỗ trợ video
   </video>
 
- <div id="binhluan" class="comment-box"></div>
-
-<script>
-let login = localStorage.getItem("login");
-let tk = localStorage.getItem("tk");
-
-/* HIỂN THỊ */
-function hienBinhLuan(){
-    let ds = JSON.parse(localStorage.getItem("binhluan")) || [];
-    let html = "<h3>💬 Bình luận</h3>";
-
-    ds.forEach((bl,i)=>{
-        html += `
-        <div class="comment">
-            <div class="ten">${bl.ten}</div>
-            <div class="noidung">${bl.noidung}</div>
-            <div class="tym" onclick="thaTym(${i})">
-                ❤️ ${bl.tim}
-            </div>
-        </div>`;
-    });
-
-    if(login === "yes"){
-        html += `
-        <p>Xin chào <b>${tk}</b></p>
-        <textarea id="nd" rows="3" placeholder="Nhập bình luận..."></textarea>
-        <button onclick="guiBinhLuan()">Gửi</button>`;
-    }else{
-        html += `
-        <p style="color:red; text-align:center;">
-            ⚠️ Vui lòng <a href="dangnhap.html">đăng nhập</a> để bình luận
-        </p>`;
-    }
-
-    document.getElementById("binhluan").innerHTML = html;
-}
-
-/* GỬI */
-function guiBinhLuan(){
-    let nd = document.getElementById("nd").value;
-    if(nd==""){ alert("Nhập bình luận!"); return; }
-
-    let ds = JSON.parse(localStorage.getItem("binhluan")) || [];
-    ds.push({ten:tk,noidung:nd,tim:0});
-    localStorage.setItem("binhluan",JSON.stringify(ds));
-    hienBinhLuan();
-}
-
-/* THẢ TIM */
-function thaTym(i){
-    let ds = JSON.parse(localStorage.getItem("binhluan"));
-    ds[i].tim++;
-    localStorage.setItem("binhluan",JSON.stringify(ds));
-    hienBinhLuan();
-}
-
-hienBinhLuan();
-</script>
 <style>
 .footer {
     background: #0b6fa4;
@@ -419,6 +335,7 @@ hienBinhLuan();
 </div>
 </body>
    </html>
+
 
 
 
